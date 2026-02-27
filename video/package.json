@@ -1,0 +1,28 @@
+{
+  "name": "3dkamehouse-videos",
+  "version": "1.0.0",
+  "description": "Videos explicativos de servicios 3D Kame House generados con Remotion",
+  "private": true,
+  "scripts": {
+    "start": "npx remotion studio",
+    "build": "npx remotion render",
+    "render:prototipado": "npx remotion render PrototipadoVideo --output out/prototipado.mp4",
+    "render:piezas": "npx remotion render PiezasTecnicasVideo --output out/piezas-tecnicas.mp4",
+    "render:personalizado": "npx remotion render ProductoPersonalizadoVideo --output out/producto-personalizado.mp4",
+    "render:all": "npm run render:prototipado && npm run render:piezas && npm run render:personalizado"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.0",
+    "remotion": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "^5.7.0"
+  },
+  "remotion": {
+    "entryPoint": "src/index.ts"
+  }
+}

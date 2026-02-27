@@ -240,3 +240,113 @@ body {
   background: rgba(0, 229, 255, 0.25);
   color: #e8eaf6;
 }
+
+/* ===== PRINTER 3D ANIMATIONS ===== */
+
+/* Carriage sweeps left → right → left on the gantry */
+@keyframes printer-carriage-move {
+  0%   { transform: translateX(-55px); }
+  50%  { transform: translateX(55px);  }
+  100% { transform: translateX(-55px); }
+}
+
+/* Gantry slowly descends (Z-axis) simulating bed lowering */
+@keyframes printer-gantry-descend {
+  0%   { transform: translateY(-48px); }
+  100% { transform: translateY(0px);   }
+}
+
+/* Nozzle heat pulsing orange glow */
+@keyframes printer-heat-pulse {
+  0%, 100% { opacity: 0.4; r: 8;  }
+  50%       { opacity: 0.9; r: 14; }
+}
+
+/* Active layer width pulses to simulate printing bead being deposited */
+@keyframes printer-layer-active {
+  0%   { width: 0;   opacity: 0.3; }
+  60%  { width: 120px; opacity: 0.8; }
+  100% { width: 120px; opacity: 0.7; }
+}
+
+/* Filament flow dashes moving along path */
+@keyframes printer-filament-flow {
+  0%   { stroke-dashoffset: 40; }
+  100% { stroke-dashoffset: 0;  }
+}
+
+/* Extruded strand blink — simulates material being deposited */
+@keyframes printer-extrude {
+  0%, 100% { opacity: 1;   stroke-width: 2.5; }
+  50%       { opacity: 0.4; stroke-width: 1;   }
+}
+
+/* Spool rotation */
+@keyframes printer-spool-rotate {
+  from { transform: rotate(0deg);   }
+  to   { transform: rotate(-360deg); }
+}
+
+/* Fan blade spin */
+@keyframes printer-fan-spin {
+  from { transform: rotate(0deg);   }
+  to   { transform: rotate(360deg); }
+}
+
+/* Status LED pulse */
+@keyframes printer-pulse {
+  0%, 100% { opacity: 1;   transform: scale(1);   }
+  50%       { opacity: 0.5; transform: scale(0.8); }
+}
+
+/* Progress bar fill */
+@keyframes printer-progress-bar {
+  0%   { width: 0; }
+  100% { width: 26px; }
+}
+
+/* ── Apply animations ── */
+
+.printer-carriage {
+  animation: printer-carriage-move 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.printer-gantry {
+  animation: printer-gantry-descend 20s linear infinite;
+}
+
+.printer-heat-pulse {
+  animation: printer-heat-pulse 1.2s ease-in-out infinite;
+}
+
+.printer-layer-active {
+  animation: printer-layer-active 4s ease-out infinite;
+  transform-origin: left center;
+}
+
+.printer-filament-flow {
+  animation: printer-filament-flow 1s linear infinite;
+}
+
+.printer-extrude {
+  animation: printer-extrude 0.4s ease-in-out infinite;
+}
+
+.printer-spool-rotate {
+  transform-origin: 300px 100px;
+  animation: printer-spool-rotate 3s linear infinite;
+}
+
+.printer-fan-spin {
+  transform-origin: 156px 115px;
+  animation: printer-fan-spin 0.3s linear infinite;
+}
+
+.printer-pulse {
+  animation: printer-pulse 1.5s ease-in-out infinite;
+}
+
+.printer-progress-bar {
+  animation: printer-progress-bar 20s linear infinite;
+}

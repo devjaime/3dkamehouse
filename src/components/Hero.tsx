@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { STATS, TERMINAL_LINES } from "@/data/content";
+import Printer3D from "@/components/Printer3D";
 
 const colorMap: Record<string, string> = {
   cyan: "#00e5ff",
@@ -66,52 +67,9 @@ export default function Hero() {
         }}
       />
 
-      {/* Wireframe rotating cube - decorative */}
-      <div className="absolute right-[5%] top-1/2 -translate-y-1/2 w-64 h-64 hidden lg:block pointer-events-none animate-wireframe-pulse">
-        <svg viewBox="0 0 200 200" fill="none" className="w-full h-full animate-rotate-slow">
-          {/* Isometric cube wireframe */}
-          <polygon
-            points="100,20 170,60 170,140 100,180 30,140 30,60"
-            stroke="#00e5ff"
-            strokeWidth="0.8"
-            fill="none"
-            opacity="0.6"
-          />
-          <polygon
-            points="100,20 170,60 100,100 30,60"
-            stroke="#00e5ff"
-            strokeWidth="0.8"
-            fill="none"
-            opacity="0.4"
-          />
-          <line x1="100" y1="100" x2="100" y2="180" stroke="#00e5ff" strokeWidth="0.8" opacity="0.3" />
-          <line x1="100" y1="100" x2="170" y2="140" stroke="#00e5ff" strokeWidth="0.8" opacity="0.3" />
-          <line x1="100" y1="100" x2="30" y2="140" stroke="#00e5ff" strokeWidth="0.8" opacity="0.3" />
-          {/* Inner structure */}
-          <polygon
-            points="100,50 140,70 140,110 100,130 60,110 60,70"
-            stroke="#7b2fff"
-            strokeWidth="0.5"
-            fill="none"
-            opacity="0.3"
-          />
-          {/* Corner dots */}
-          <circle cx="100" cy="20" r="2" fill="#00e5ff" opacity="0.8" />
-          <circle cx="170" cy="60" r="2" fill="#00e5ff" opacity="0.8" />
-          <circle cx="170" cy="140" r="2" fill="#00e5ff" opacity="0.8" />
-          <circle cx="100" cy="180" r="2" fill="#00e5ff" opacity="0.8" />
-          <circle cx="30" cy="140" r="2" fill="#00e5ff" opacity="0.8" />
-          <circle cx="30" cy="60" r="2" fill="#00e5ff" opacity="0.8" />
-          <circle cx="100" cy="100" r="2" fill="#7b2fff" opacity="0.6" />
-        </svg>
-      </div>
-
-      {/* Second rotating ring */}
-      <div className="absolute right-[7%] top-1/2 -translate-y-1/2 w-80 h-80 hidden lg:block pointer-events-none">
-        <svg viewBox="0 0 300 300" fill="none" className="w-full h-full animate-rotate-reverse opacity-20">
-          <circle cx="150" cy="150" r="120" stroke="#00e5ff" strokeWidth="0.5" strokeDasharray="4 8" />
-          <circle cx="150" cy="150" r="80" stroke="#7b2fff" strokeWidth="0.5" strokeDasharray="3 6" />
-        </svg>
+      {/* 3D Printer animated illustration */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[420px] hidden lg:flex flex-col items-center pointer-events-none pr-4">
+        <Printer3D />
       </div>
 
       {/* Content */}

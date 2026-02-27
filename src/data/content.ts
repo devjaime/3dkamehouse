@@ -125,6 +125,7 @@ export const NAV_LINKS = [
   { label: "Inicio", href: "#inicio" },
   { label: "Nosotros", href: "#nosotros" },
   { label: "Servicios", href: "#servicios" },
+  { label: "Videos", href: "#como-trabajamos" },
   { label: "Equipo", href: "#equipo" },
   { label: "Certificación", href: "#certificacion" },
   { label: "Proyectos", href: "#proyectos" },
