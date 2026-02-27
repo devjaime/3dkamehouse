@@ -17,6 +17,14 @@
 # misc
 .DS_Store
 *.pem
+# macOS resource forks
+._*
+._.*
+.Spotlight-V100
+.Trashes
+
+# claude settings
+.claude/
 
 # debug
 npm-debug.log*
